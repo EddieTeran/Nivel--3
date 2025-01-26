@@ -3,12 +3,12 @@
 class Nodo
 {
     public string Dia; // Dato del nodo
-    public Nodo Siguiente; 
+    public Nodo Siguiente;
 
     public Nodo(string dia)
     {
-        Dia = dia; 
-        Siguiente = null; 
+        Dia = dia;
+        Siguiente = null;
     }
 }
 
@@ -19,33 +19,33 @@ class ListaEnlazada
     public void Agregar(string dia)
     {
         Nodo nuevoNodo = new Nodo(dia); // Nuevo nodo
-        if (head == null) 
+        if (head == null)
         {
-            head = nuevoNodo; 
+            head = nuevoNodo;
         }
         else
         {
-            Nodo nodoActual = head; 
-            while (nodoActual.Siguiente != null) 
+            Nodo nodoActual = head;
+            while (nodoActual.Siguiente != null)
             {
                 nodoActual = nodoActual.Siguiente;
             }
-            nodoActual.Siguiente = nuevoNodo; 
+            nodoActual.Siguiente = nuevoNodo;
         }
     }
     // Invertir la lista
     public void Invertir()
     {
-        Nodo anterior = null; 
-        Nodo actual = head; 
-        while (actual != null) 
+        Nodo anterior = null;
+        Nodo actual = head;
+        while (actual != null)
         {
-            Nodo siguiente = actual.Siguiente; 
-            actual.Siguiente = anterior; 
-            anterior = actual; 
-            actual = siguiente; 
+            Nodo siguiente = actual.Siguiente;
+            actual.Siguiente = anterior;
+            anterior = actual;
+            actual = siguiente;
         }
-        head = anterior; 
+        head = anterior;
     }
 
     public void Mostrar()
@@ -53,8 +53,8 @@ class ListaEnlazada
         Nodo nodoActual = head; // Empieza en la cabeza
         while (nodoActual != null) // Mientras haya nodos
         {
-            Console.Write(nodoActual.Dia + " -> "); 
-            nodoActual = nodoActual.Siguiente; 
+            Console.Write(nodoActual.Dia + " -> ");
+            nodoActual = nodoActual.Siguiente;
         }
         Console.WriteLine(); // Muestra el final de la lista
     }
@@ -65,7 +65,7 @@ class Program
     static void Main(string[] args)
     {
         ListaEnlazada lista = new ListaEnlazada(); // Lista dias de la semana
-        
+
         lista.Agregar("Lunes");
         lista.Agregar("Martes");
         lista.Agregar("Miércoles");
